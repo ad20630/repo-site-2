@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import ListGroup from 'react-bootstrap/ListGroup';
+import ListInfo from '../data/ListInfo.tsx';
+import MyrmIdle from "../assets/MyrmidonIdle.png";
 
 function Sidebar() {
   return (
@@ -22,9 +24,9 @@ function Sidebar() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-              <ListGroup>
-                {['Myrmidon Line', 'Mercenary Line'].map((classline) => <ListGroup.Item>{classline}</ListGroup.Item>)}
-              </ListGroup>
+             <ListGroup>
+                {ListInfo().map((classline: string[]) => <ListGroup.Item><img src={(classline[1])} alt="Myrmidon Line" /> {classline[0]}</ListGroup.Item>)}
+              </ListGroup> 
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
